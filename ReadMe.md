@@ -1,6 +1,6 @@
 ### Topics covered
 - [x] 1. Thread Basics   
-- [ ] 2. Synchronization / Locks   
+- [x] 2. Synchronization / Locks   
 - [ ] 3. Volatile & Memory Visibility/Memory Model    
 - [ ] 4. Atomic Variables  
 - [ ] 5. Executors / Thread Pools   
@@ -89,14 +89,14 @@ The flipping flips the MARK word present in the object header.
 Java Object
  ├─ Data fields
  ├─ Method 
- └─ Monitor (Mechanism for synchronization)
+ └─ Monitor (Mechanism for synchronization - MARK word)
       ├─ Lock owner (thread)
       ├─ Entry queue (threads waiting to acquire lock)
       └─ Wait set (threads waiting from wait())
 ```
 
 #### Issues with Synchronized 
-Lock contention - Blocked threads cannot do other work and consume system resources.
-Deadlocks - two threads wait for each other forever.
-No timeout - a thread can wait forever.
+Lock contention - Blocked threads cannot do other work and consume system resources.    
+Deadlocks - two threads wait for each other forever.    
+No timeout - a thread can wait forever.    
 No fairness - The JVM does not guarantee order in thread execution, can cause thread starvation.
