@@ -1,17 +1,17 @@
 ### Topics covered
-[x] 1. Thread Basics   
-[] 2. Synchronization / Locks   
-[] 3. Volatile & Memory Visibility/Memory Model    
-[] 4. Atomic Variables  
-[] 5. Executors / Thread Pools   
-[] 6. Producer–Consumer / Blocking Queues   
-[] 7. Concurrent Collections   
-[] 8. Coordination Primitives   
-[] 9. Locks (Advanced)    
-[] 10. Deadlocks / Livelocks / Starvation   
-[] 11. Fork/Join Parallelism    
-[] 12. Asynchronous Programming   
-[] 13. Parallel Streams
+- [x] 1. Thread Basics   
+- [ ] 2. Synchronization / Locks   
+- [ ] 3. Volatile & Memory Visibility/Memory Model    
+- [ ] 4. Atomic Variables  
+- [ ] 5. Executors / Thread Pools   
+- [ ] 6. Producer–Consumer / Blocking Queues   
+- [ ] 7. Concurrent Collections   
+- [ ] 8. Coordination Primitives   
+- [ ] 9. Locks (Advanced)    
+- [ ] 10. Deadlocks / Livelocks / Starvation   
+- [ ] 11. Fork/Join Parallelism    
+- [ ] 12. Asynchronous Programming   
+- [ ] 13. Parallel Streams
 
 ### Thread Basics
 start() → creates a new thread    
