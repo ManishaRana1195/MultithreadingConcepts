@@ -94,6 +94,7 @@ Java Object
       ├─ Entry queue (threads waiting to acquire lock)
       └─ Wait set (threads waiting from wait())
 ```
+![Java Object Monitor](https://github.com/ManishaRana1195/MultithreadingConcepts/blob/e2c37c2819eb193fe7ef632bcb706bb7db1c5a82/Images/JavaObjectMonitor.gif) 
 
 #### Issues with Synchronized 
 Lock contention - Blocked threads cannot do other work and consume system resources.    
