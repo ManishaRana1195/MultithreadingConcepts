@@ -1,6 +1,10 @@
 
 public class Main {
     public static void main() throws Exception {
+       threadBasicExamples();
+    }
+
+    private static void threadBasicExamples() throws InterruptedException {
         // start() is called on your thread class
         Worker threadA = new Worker("A");
         // Your thread class is passed in the thread class and its start method is called
@@ -21,6 +25,5 @@ public class Main {
         threadC.join();
         // We use join so that the main thread waits for the above 3 threads to complete
         System.out.println("Main thread is proceeding");
-
     }
 }
