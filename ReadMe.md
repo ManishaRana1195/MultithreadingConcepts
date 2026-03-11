@@ -1,7 +1,7 @@
 ### Topics covered
 - [x] 1. Thread Basics   
 - [x] 2. Synchronization / Locks   
-- [ ] 3. Volatile & Memory Visibility/Memory Model    
+- [x] 3. Volatile & Memory Visibility/Memory Model    
 - [ ] 4. Atomic Variables  
 - [ ] 5. Executors / Thread Pools   
 - [ ] 6. Producer–Consumer / Blocking Queues   
@@ -12,6 +12,14 @@
 - [ ] 11. Fork/Join Parallelism    
 - [ ] 12. Asynchronous Programming   
 - [ ] 13. Parallel Streams
+
+### Three Core Problems in Multi-Threading
+| Problem                   | What it is                                              | How to fix                      |
+|---------------------------|---------------------------------------------------------|---------------------------------|
+| **Visibility**            | Thread doesn’t see latest value                         | `volatile`, `synchronized`      |
+| **Reordering / Ordering** | Operations appear in a different order to other threads | `volatile`, `synchronized`      |
+| **Atomicity**             | Compound operations are not indivisible                 | `synchronized`, `AtomicInteger` |
+
 
 ### Thread Basics
 start() → creates a new thread    
@@ -101,3 +109,37 @@ Lock contention - Blocked threads cannot do other work and consume system resour
 Deadlocks - two threads wait for each other forever.    
 No timeout - a thread can wait forever.    
 No fairness - The JVM does not guarantee order in thread execution, can cause thread starvation.
+
+### Memory Visibility and Memory Model
+```
+           Main Memory
+           counter = 0
+            /     \
+     CPU Cache   CPU Cache
+     (Thread A)  (Thread B)
+```
+Each thread may work with CPU caches. So, the count updated by Thread A may not be visible to Thread B as it is not written to memory, but is in the cache.
+This is memory visibility problem for threads as they night not see updated value.
+Synchronized provides visibility as each thread update is written to the memory.
+
+JMM = rules for memory visibility among threads + ordering
+
+
+
+### Volatile
+Eg - volatile boolean ready = true;
+
+We also have volatile keyword to define variables. It is light-weight mechanism, where the updated value is flushed to the memory. So that updating variable -> is immediately 
+visible to another thread and read a variable -> is always read from main memory.
+
+It is ideal for simple state flags. But should be used for counters as it doesnt guarantee atomicity.
+
+```
+volatile
+   ↓
+visibility only
+
+synchronized
+   ↓
+visibility + atomicity + locking
+```
