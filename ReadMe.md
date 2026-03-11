@@ -25,7 +25,10 @@
 start() → creates a new thread    
 run() → just runs in the current thread, use start() method    
 join() → makes the current thread/main wait for the thread join is called on. It waits either for the lock, signal or another thread to complete.    
-sleep() → pauses the thread 
+sleep() → pauses the thread   
+wait()     → thread go to sleep & release lock
+notify()   → wake up 1 sleeping thread
+notifyAll()→ wake up all sleeping threads
 
 Create threads by
 1. Extending Thread class
